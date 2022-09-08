@@ -7,7 +7,7 @@ class VendorsController < ApplicationController
   def show
     vendor = Vendor.find_by(id: params[:id])
     if !vendor.nil?
-      render json: vendor
+      render json: vendor, serializer: VendorWithVendorSweetSerializer
     else
       render json: { error: "Vendor not found" }
     end

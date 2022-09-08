@@ -2,7 +2,7 @@ class VendorSweetsController < ApplicationController
   def create
     vendor_sweet = VendorSweet.new(vendor_sweet_params)
     if vendor_sweet.save
-      render json: {id: vendor_sweet.id, name: vendor_sweet.sweet.name, price: vendor_sweet.price}
+      render json: vendor_sweet
     else
       render json: { errors: vendor_sweet.errors.full_messages }
     end

@@ -1,3 +1,7 @@
 class VendorSweetSerializer < ActiveModel::Serializer
-  attributes :id, :vendor_id, :sweet_id, :price
+  attributes :id, :name, :price
+
+  def name
+    "#{self.object.sweet.name}"
+  end
 end
